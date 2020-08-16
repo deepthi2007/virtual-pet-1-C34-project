@@ -17,6 +17,7 @@ function setup() {
   dog = createSprite(250,250,10,14);
   dog.addImage("image1",happyDogImg);
   dog.scale = 0.5;
+  dog.addImage("dog1",dogImg);
 
   database = firebase.database();
 
@@ -31,10 +32,13 @@ function draw() {
   background(46, 139, 87);
 
   if(keyWentDown(UP_ARROW)){
-    image(dogImg,250,250,10,14);
+   dog.changeImage("dog1");
     writeStocks(foodS);
   }
-
+  if(keyWentUp(UP_ARROW)){
+  dog.changeImage("image1");
+  }
+  
   drawSprites();
   //add styles here
 
