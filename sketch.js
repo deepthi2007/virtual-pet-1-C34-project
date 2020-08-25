@@ -30,12 +30,11 @@ function setup() {
 function draw() {  
 
   background(46, 139, 87);
-
-  if(keyWentDown(UP_ARROW)){
+  if(keyWentDown(UP_ARROW) && foodStock>0){
    dog.changeImage("dog1");
     writeStocks(foodS);
   }
-  if(keyWentUp(UP_ARROW)){
+  if(keyWentUp(UP_ARROW) && foodStock<0){
   dog.changeImage("image1");
   }
   
